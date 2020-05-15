@@ -2,18 +2,10 @@ package entities;
 
 public class Product {
 
-	String name;
-	Double price;
+	 String name;
+	 Double price;
 	
-	
-	public Product(String name, Double price) {
-		super();
-		this.name = name;
-		this.price = price;
-	}
-
-
-	
+		
 	public String getName() {
 		return name;
 	}
