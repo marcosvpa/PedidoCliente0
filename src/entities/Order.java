@@ -13,12 +13,13 @@ public class Order {
 	public OrderStatus status;
 	public Client client = new Client();
 	public List <OrderItem> orderList = new ArrayList<OrderItem>();
-	public Double total;
+	double total = 0;
 
 	SimpleDateFormat sdf1 = new SimpleDateFormat("dd/MM/yyyy");
 	SimpleDateFormat sdf2 = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");	
 
 	Scanner sc = new Scanner (System.in);
+
 	
 	public void registerItem () {
 		OrderItem newItem = new OrderItem();
@@ -31,11 +32,11 @@ public class Order {
 		orderList.add(newItem);
 	}
 
-	public double getTotal () {
+	public void getTotal () {
 		for (OrderItem item:orderList) {
 			total += item.subTotal();
 		}
-		return total;
+		
 	}
 	
 	public String toString() {
@@ -55,7 +56,7 @@ public class Order {
 					","+" Quantity: "+item.quantities+" Subtotal: $"+item.subTotal() +"\n");
 
 		}
-		sb.append("Total Price: $"+getTotal());
+		sb.append("Total Price: $"+total);
 		return sb.toString();
 	}
 	

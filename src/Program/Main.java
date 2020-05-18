@@ -44,6 +44,10 @@ public class Main {
 			 System.out.println("Enter #"+count+" item data:");
 			 newOrder.registerItem();
 		 }
+		 
+		 
+		 newOrder.getTotal();
+		 
 		System.out.printf("%s",newOrder);
 		
 		
